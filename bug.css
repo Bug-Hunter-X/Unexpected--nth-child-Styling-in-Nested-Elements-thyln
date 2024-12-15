@@ -1,0 +1,12 @@
+The following CSS code snippet exhibits an unusual error. It involves the use of the `:nth-child` pseudo-class selector with a formula that isn't working as expected, resulting in unexpected styling being applied to elements within the HTML structure.
+
+```css
+.container :nth-child(4n+2) {
+  background-color: yellow;
+}
+```
+
+The `4n+2` formula is meant to select every second element starting from the second one, which are elements with indices 2, 6, 10, and so on.
+However, when applied to elements within a nested structure, its behavior may become unpredictable or produce unexpected results.
+
+This can occur due to the way `:nth-child` operates within nested structures; it does not necessarily apply sequentially to the entire structure but rather to each parent's immediate children separately.  Thus, elements may receive the styling even though their positions within the whole tree wouldn't directly match the formula's calculation.
